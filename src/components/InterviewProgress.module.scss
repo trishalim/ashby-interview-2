@@ -1,0 +1,129 @@
+@import "../variables";
+
+@mixin columns {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 0.5fr;
+  column-gap: var(--spacingNormal);
+}
+
+/** Header & Container **/
+
+.header,
+.container {
+  min-width: 600px;
+  
+  p {
+    margin: 0;
+  }
+}
+
+.header {
+  @include columns;
+  padding: 0 var(--spacingNormal) var(--spacingXsmall);
+  font-size: var(--fontSizeSmall);
+}
+
+.container {
+  border-radius: var(--borderRadius);
+
+  background-color: var(--colorNeutral000);
+  box-shadow: 0 2px 10px var(--colorShadow);
+}
+
+/** Stage **/
+
+.stage {
+  // Empty
+  border-bottom: var(--borderWidthNormal) solid var(--colorNeutral900);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.stageHeader {
+  @include columns;
+  border-bottom: var(--borderWidthNormal) solid var(--colorNeutral900);
+  padding: var(--spacingNormal);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.stageTitle {
+  margin: 0;
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightHeavyBold);
+}
+
+.entered, 
+.time {
+  color: var(--colorNeutral700);
+}
+
+/** Interview **/
+
+.interview {
+  padding: var(--spacingNormal);
+  border-bottom: var(--borderWidthNormal) solid var(--colorNeutral900);
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.interviewTitle {
+  margin: 0;
+  font-size: var(--fontSizeNormal);
+  font-weight: var(--fontWeightHeavyBold);
+}
+
+.scheduled {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: var(--spacingNormal);
+}
+
+/** Interviewer **/
+
+.interviewer {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  column-gap: var(--spacingNormal);
+  margin-bottom: var(--spacingNormal);
+  
+  img {
+    height: var(--fontSizeXxlarge);
+    width: var(--fontSizeXxlarge);
+    border-radius: 100%;
+  }
+}
+
+.rsvp,
+.score {
+  svg {
+    height: var(--fontSizeNormal);
+  }
+}
+
+.positive {
+  color: var(--colorPositive600);
+}
+
+.negative {
+  color: var(--colorNegative600);
+}
+
+.warning {
+  color: var(--colorWarning600);
+}
+
+.unknown {
+  color: var(--colorNeutral600);
+}
+
+.score {
+  font-weight: var(--fontWeightHeavyBold);
+  font-size: var(--fontSizeLarge);
+}
