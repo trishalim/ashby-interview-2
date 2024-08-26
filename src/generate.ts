@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { rand, randAvatar, randFullName } from "@ngneat/falso";
 import {
   Interview,
